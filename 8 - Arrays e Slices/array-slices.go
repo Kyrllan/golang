@@ -24,4 +24,10 @@ func main() {
 	fmt.Println(slice2)
 	fmt.Println(slice)
 
+	//Arrays Internos
+	slice3 := make([]float32, 10, 11)
+	fmt.Println(slice3)
+	fmt.Println(len(slice3))
+	fmt.Println(cap(slice3))
+
 }
