@@ -3,21 +3,17 @@ package main
 import "time"
 
 func calculateMyAge(day, month, year int) int {
-	timeNow := time.Now()
-	yearNow := timeNow.Year()
-	monthNow := int(timeNow.Month())
-	dayNow := timeNow.Day()
-	years := yearNow - year
-	months := monthNow - month
-	days := dayNow - day
-	if months < 0 {
+	birthDate := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
+	now := time.Now()
+
+	years := now.Year() - birthDate.Year()
+
+	// Adjust age if birthday hasn't occurred this year
+	if now.Month() < birthDate.Month() ||
+		(now.Month() == birthDate.Month() && now.Day() < birthDate.Day()) {
 		years--
-		months = 12 + months
 	}
-	if days < 0 {
-		months--
-		days = 30 + days
-	}
+
 	return years
 }
 
