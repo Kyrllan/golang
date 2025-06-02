@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	
 	tipoEndereco := enderecos.TipoDeEndereco("Avenida Paulista")
 	fmt.println(tipoEndereco)
 } 
