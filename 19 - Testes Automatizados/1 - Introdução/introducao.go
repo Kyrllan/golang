@@ -1,12 +1,12 @@
 package main
 
-import (	
+import (
 	"fmt"
 	"introducao-testes/enderecos"
 )
 
 func main() {
-	
+
 	tipoEndereco := enderecos.TipoDeEndereco("Avenida Paulista")
-	fmt.println(tipoEndereco)
-} 
+	fmt.Println(tipoEndereco)
+}

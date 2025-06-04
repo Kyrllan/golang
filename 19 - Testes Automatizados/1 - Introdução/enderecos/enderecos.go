@@ -1,9 +1,13 @@
 package enderecos
 
+import "strings"
+
 func TipoDeEndereco(endereco string) string {
-	tiposValidos := []string{"Rua", "Avenida", "Estrada", "Rodovia"}
+	tiposValidos := []string{"rua", "avenida", "estrada", "rodovia"}
+
 	enderecoEmLetraMinuscula := strings.ToLower(endereco)
 	primeiraPalavra := strings.Split(enderecoEmLetraMinuscula, " ")[0]
+
 	enderecoTemUmTipoValido := false
 	for _, tipo := range tiposValidos {
 		if tipo == primeiraPalavra {
@@ -11,7 +15,7 @@ func TipoDeEndereco(endereco string) string {
 		}
 	}
 	if enderecoTemUmTipoValido {
-		return strings.Title(primeiraPalavra)
+		return strings.ToUpper(primeiraPalavra)
 	}
 	return "Tipo inválido"
 }
