@@ -20,5 +20,9 @@ func main() {
 		w.Write([]byte("Olá Mundo"))
 	})
 
+	http.HandleFunc("/usuarios", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Bem vindo a página de usuários"))
+	})
+
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
