@@ -24,9 +24,5 @@ func main() {
 		w.Write([]byte("Bem vindo a página de usuários"))
 	})
 
-	http.HandleFunc("/produtos", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Bem vindo a página de produtos"))
-	})
-
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
